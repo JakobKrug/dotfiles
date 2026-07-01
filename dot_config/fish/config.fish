@@ -19,7 +19,7 @@ function fastfetch
 
     # 3. Check cache to avoid re-running pywal
     set -l cache_file "$HOME/.cache/fastfetch_last_wall"
-    if test "$wall" != (cat "$cache_file" 2>/dev/null)
+    if test "$wall" != "$(cat "$cache_file" 2>/dev/null)"
         wal -i "$wall" -n -e -q -b "#232627"
         echo "$wall" >"$cache_file"
     end
