@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[user]
+	email = jakobkrug04@gmail.com
+	name = Jakob Krug
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
