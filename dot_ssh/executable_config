@@ -1,0 +1,81 @@
+Host *
+    ServerAliveInterval 30
+    ServerAliveCountMax 5
+    SetEnv TERM=xterm-256color
+    AddressFamily inet
+
+Host bwcloud
+    HostName 134.60.156.55
+    User ubuntu
+    IdentityFile ~/.ssh/surface
+    Compression yes
+
+Host bwc
+    HostName 192.52.5.48
+    User debian
+    IdentityFile ~/.ssh/bwcloud
+    Compression yes
+
+Host johnny
+    HostName 134.60.157.188
+    User ubuntu
+    IdentityFile ~/.ssh/surface
+    Compression yes
+
+Host github
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/surface
+    IdentitiesOnly yes
+
+Host uni-git
+    HostName gitlab.uni-ulm.de
+    User git
+    IdentityFile ~/.ssh/uni-git
+    IdentitiesOnly yes
+
+Host clark-git
+    HostName clark.informatik.uni-ulm.de
+    User git
+    IdentityFile ~/.ssh/surface
+    IdentitiesOnly yes
+
+Host sgi
+    HostName login.informatik.uni-ulm.de
+    User jk108
+    IdentityFile ~/.ssh/sgi_ed25519
+
+Host debian
+    HostName debian.jakobkrug.com
+    ProxyCommand /usr/bin/cloudflared access ssh --hostname %h
+    User jakob
+    IdentityFile ~/.ssh/server_ed25519
+    Compression yes
+
+Host debian-local
+    HostName 192.168.178.10
+    User jakob
+    IdentityFile ~/.ssh/server_ed25519
+
+Host nas
+    HostName nas.jakobkrug.com
+    ProxyCommand /usr/bin/cloudflared access ssh --hostname %h
+    User jakob
+    IdentityFile ~/.ssh/nas_ed25519
+    Compression yes
+
+Host nas-local
+    HostName 192.168.178.104
+    User jakob
+    IdentityFile ~/.ssh/nas_ed25519
+
+Host machineA machineB
+    HostName 134.60.153.129
+    User student
+    IdentityFile ~/.ssh/student_key
+
+Host ctf
+    HostName ctf-lab.lxd-vs.uni-ulm.de
+    User ctf
+    IdentityFile ~/.ssh/surface
+    IdentitiesOnly yes
