@@ -25,7 +25,7 @@ Host johnny
 Host github
     HostName github.com
     User git
-    IdentityFile ~/.ssh/surface
+    IdentityFile ~/.ssh/github
     IdentitiesOnly yes
 
 Host uni-git
